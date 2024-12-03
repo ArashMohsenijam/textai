@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440" height="900" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Neural Network Grid -->
+    <g opacity="0.1">
+        <path d="M100,100 L200,150 L300,100 L400,200" stroke="#007AFF" stroke-width="1"/>
+        <circle cx="100" cy="100" r="4" fill="#007AFF"/>
+        <circle cx="200" cy="150" r="4" fill="#007AFF"/>
+        <circle cx="300" cy="100" r="4" fill="#007AFF"/>
+        <circle cx="400" cy="200" r="4" fill="#007AFF"/>
+    </g>
+
+    <!-- Data Flow Lines -->
+    <g opacity="0.08">
+        <path d="M0,300 Q720,200 1440,300" stroke="#5856D6" stroke-width="1"/>
+        <path d="M0,600 Q720,500 1440,600" stroke="#5856D6" stroke-width="1"/>
+    </g>
+
+    <!-- Binary Code Pattern -->
+    <g opacity="0.05" fill="#FFFFFF">
+        <text x="100" y="400" font-family="monospace">010110</text>
+        <text x="300" y="500" font-family="monospace">101001</text>
+        <text x="500" y="300" font-family="monospace">110101</text>
+    </g>
+
+    <!-- Circuit Board Pattern -->
+    <g opacity="0.07">
+        <path d="M800,100 L900,100 L900,200" stroke="#32ADE6" stroke-width="1"/>
+        <path d="M1000,300 L1100,300 L1100,400" stroke="#32ADE6" stroke-width="1"/>
+        <circle cx="900" cy="200" r="3" fill="#32ADE6"/>
+        <circle cx="1100" cy="400" r="3" fill="#32ADE6"/>
+    </g>
+
+    <!-- Abstract Shapes -->
+    <g opacity="0.06">
+        <path d="M1200,500 L1250,550 L1200,600 L1150,550 Z" fill="#007AFF"/>
+        <path d="M1300,200 L1350,250 L1300,300 L1250,250 Z" fill="#5856D6"/>
+    </g>
+</svg>

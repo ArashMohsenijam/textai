@@ -1,0 +1,23 @@
+{
+  "name": "textai",
+  "version": "1.0.0",
+  "description": "A modern text-to-speech web application using OpenAI's API",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve .",
+    "deploy": "gh-pages -d ."
+  },
+  "keywords": [
+    "text-to-speech",
+    "openai",
+    "web-app"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "serve": "^14.2.1"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.0.0"
+  }
+}

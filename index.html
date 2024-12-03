@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TextAI - Modern Text to Speech</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600&display=swap">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <svg class="waveform" width="24" height="24" viewBox="0 0 24 24">
+                <path d="M3,12 L5,12 L7,4 L9,20 L11,12 L13,12 L15,8 L17,16 L19,12 L21,12"></path>
+            </svg>
+            <span>TextAI</span>
+        </div>
+        <button class="download-btn">Download Now</button>
+    </nav>
+
+    <main class="container">
+        <section class="hero">
+            <h1>Transform Text to Natural Speech</h1>
+            <p class="subtitle">Powered by advanced AI technology</p>
+        </section>
+
+        <section class="converter-section">
+            <div class="glass-panel">
+                <div class="input-group">
+                    <textarea id="textInput" placeholder="Enter your text here..." rows="4"></textarea>
+                    <div class="controls">
+                        <select id="voiceSelect" class="voice-select">
+                            <option value="alloy">Alloy</option>
+                            <option value="echo">Echo</option>
+                            <option value="fable">Fable</option>
+                            <option value="onyx">Onyx</option>
+                            <option value="nova">Nova</option>
+                            <option value="shimmer">Shimmer</option>
+                        </select>
+                        <button id="convertBtn" class="convert-btn">
+                            <span class="button-text">Convert to Speech</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="audio-container">
+                    <audio id="audioPlayer" controls></audio>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <h2>FAQ</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>What is text to speech (TTS)?</h3>
+                    <div class="faq-content">
+                        <p>Text-to-speech (TTS) is advanced technology that converts written text into natural-sounding speech, making content more accessible and versatile.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h3>What is an AI voice?</h3>
+                    <div class="faq-content">
+                        <p>An AI voice is a computer-generated voice that uses machine learning to produce human-like speech patterns, offering natural and expressive audio output.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Powered by OpenAI Text-to-Speech Technology</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
