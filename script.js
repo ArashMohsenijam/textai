@@ -4,6 +4,9 @@ const voiceSelect = document.getElementById('voiceSelect');
 const convertBtn = document.getElementById('convertBtn');
 const audioPlayer = document.getElementById('audioPlayer');
 const buttonText = convertBtn.querySelector('.button-text');
+const audioInput = document.getElementById('audioInput');
+const audioToTextBtn = document.getElementById('audioToTextBtn');
+const languageSelect = document.getElementById('languageSelect');
 
 // API Configuration
 const OPENAI_API_KEY = ''; // Remove API key before pushing to GitHub
@@ -135,6 +138,35 @@ async function makeAPIRequest(text, voice) {
     });
 }
 
+// Function to convert audio to text using OpenAI API
+async function convertAudioToText(audioFile, language) {
+    const apiKey = getApiKey();
+    if (!apiKey) {
+        throw new Error('No API key found');
+    }
+
+    const formData = new FormData();
+    formData.append('file', audioFile);
+    formData.append('model', 'whisper-1');
+    formData.append('language', language);
+
+    const response = await fetch('https://api.openai.com/v1/audio/transcriptions', {
+        method: 'POST',
+        headers: {
+            'Authorization': `Bearer ${apiKey}`
+        },
+        body: formData
+    });
+
+    if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error?.message || 'API Error');
+    }
+
+    const data = await response.json();
+    return data.text;
+}
+
 // Show error with custom styling
 const showError = (message, type = 'error') => {
     const errorDiv = document.createElement('div');
@@ -222,6 +254,25 @@ convertBtn.addEventListener('click', async () => {
             buttonText.style.opacity = '1';
             convertBtn.disabled = false;
         }, 300);
+    }
+});
+
+// Audio to Text button click handler
+audioToTextBtn.addEventListener('click', async () => {
+    const audioFile = audioInput.files[0];
+    const language = languageSelect.value;
+    if (!audioFile) {
+        showError('Please select an audio file to convert.');
+        return;
+    }
+
+    try {
+        const transcribedText = await convertAudioToText(audioFile, language);
+        textInput.value = transcribedText;
+        showError('Audio converted to text successfully!', 'success');
+    } catch (error) {
+        console.error('Error:', error);
+        showError(error.message);
     }
 });
 

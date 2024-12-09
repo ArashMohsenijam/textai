@@ -37,10 +37,24 @@
                             <option value="nova">Nova</option>
                             <option value="shimmer">Shimmer</option>
                         </select>
+                        <select id="languageSelect" class="voice-select">
+                            <option value="en">English</option>
+                            <option value="es">Spanish</option>
+                            <option value="fr">French</option>
+                            <option value="de">German</option>
+                            <option value="zh">Chinese</option>
+                            <option value="ja">Japanese</option>
+                        </select>
                         <button id="convertBtn" class="convert-btn">
                             <span class="button-text">Convert to Speech</span>
                         </button>
                     </div>
+                </div>
+                <div class="input-group">
+                    <input type="file" id="audioInput" accept="audio/*">
+                    <button id="audioToTextBtn" class="convert-btn">
+                        <span class="button-text">Convert to Text</span>
+                    </button>
                 </div>
                 <div class="audio-container">
                     <audio id="audioPlayer" controls></audio>
